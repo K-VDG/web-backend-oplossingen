@@ -1,5 +1,6 @@
 <?php
 
-	echo 'Hooray!';
+	echo '2de wijziging';
+	
 
 ?>
