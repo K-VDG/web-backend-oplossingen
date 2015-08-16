@@ -8,7 +8,7 @@
 	<title>Opdracht-</title>
 	<meta charset="UTF-8">
 	<style>
-		td, tr {border: 2px solid black;border-collapse: collapse;padding: 10px; text-align: center;}
+		td,tr {border: 2px solid black;border-collapse: collapse;padding: 10px; text-align: center;}
 
 		.lightgreen {
 			background-color: lightgreen;
@@ -17,6 +17,7 @@
 </head>
 <body>
 <table>
+	
 	<?php
 		for($verticaal = 1; $verticaal <= 10; ++$verticaal)
 			{
