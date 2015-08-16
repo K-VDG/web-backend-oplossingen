@@ -66,6 +66,12 @@
 
 	static $saldo = 100000;
 	var_dump(RecursiveBerekenSaldo($saldo, 8, 10));
+
+	$uitloopen = RecursiveBerekenSaldo($saldo, 8, 10);
+	foreach($uitloopen as $key => $value){
+
+		echo('<div>Na ' .$key . ' jaar zal er ' . $value . ' Euro op de rekening staan.</div>');
+	}
 	?>
 	
 </p>

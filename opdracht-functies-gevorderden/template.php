@@ -1,7 +1,7 @@
 <?php
 // $md5HashKey  = "d1fa402db91a7a93c4f414b8278ce073";
 
-$md5HashKey  = "d1fa402db91a7a93c4f414b8278ce073";
+
 
 	 function tel1($needle){
 	 	$outputArray = array();
@@ -11,7 +11,7 @@ $md5HashKey  = "d1fa402db91a7a93c4f414b8278ce073";
 	 	$aantalkeer = substr_count($md5HashKey, $needle);
 	 	$haystackLength = strlen($md5HashKey);
 	 	$needleLength = strlen($needle);
-	 	$percentage = ($needleLength / $haystackLength) * 100;
+	 	$percentage = (($needleLength / $haystackLength) * $aantalkeer) * 100;
 
 	 	// array aanvullen met AANTAL, PERCENTAGE, LETTER, HAYSTACK
 	 	$outputArray[] = $aantalkeer;
@@ -32,7 +32,7 @@ $md5HashKey  = "d1fa402db91a7a93c4f414b8278ce073";
 	 	$aantalkeer = substr_count($md5HashKey, $needle);
 	 	$haystackLength = strlen($md5HashKey);
 	 	$needleLength = strlen($needle);
-	 	$percentage = ($needleLength / $haystackLength) * 100;
+	 	$percentage = (($needleLength / $haystackLength) * $aantalkeer) * 100;
 
 	 	// array aanvullen met AANTAL, PERCENTAGE, LETTER, HAYSTACK
 	 	$outputArray[] = $aantalkeer;
@@ -53,7 +53,7 @@ $md5HashKey  = "d1fa402db91a7a93c4f414b8278ce073";
 	 	$aantalkeer = substr_count($md5HashKey, $needle);
 	 	$haystackLength = strlen($md5HashKey);
 	 	$needleLength = strlen($needle);
-	 	$percentage = ($needleLength / $haystackLength) * 100;
+	 	$percentage = (($needleLength / $haystackLength) * $aantalkeer) * 100;
 
 	 	// array aanvullen met AANTAL, PERCENTAGE, LETTER, HAYSTACK
 	 	$outputArray[] = $aantalkeer;
@@ -81,7 +81,8 @@ $md5HashKey  = "d1fa402db91a7a93c4f414b8278ce073";
 <body>
 	<p>
 	<?php
-	echo tel1('s');
+	$md5HashKey  = "d1fa402db91a7a93c4f414b8278ce073";
+	echo tel1('c');
 
 	?>	
 	<!-- vardump als test: -->

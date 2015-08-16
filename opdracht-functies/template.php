@@ -63,7 +63,21 @@
 		Geef de lengte en uppercase versie van een string:
 		<?php
 			var_dump(upperLength("Dit is een string!"));
+			
+			$resultaatArray = upperLength("Dit is een string!");
+			echo($resultaatArray[0]);
 		?>
+		<ul>
+			<?php foreach ($resultaatArray as $key => $value): ?>
+				
+				<li>
+					De waarde <?= $key ?> geeft <?= $value ?> !
+				</li>
+
+			<?php endforeach ?>
+
+
+		</ul>
 	</p>
 
 </body>
