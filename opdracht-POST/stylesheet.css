@@ -1,0 +1,25 @@
+body {
+	font-family: helvetica;
+	font-size: 120%;
+}
+
+li {
+	list-style-type: none;
+	margin: 10px;
+}
+
+label {
+	display: inline-block;
+	color: teal;
+	width: 100px;
+}
+
+input[type=submit] {
+	margin-left: 17em;
+
+}
+
+input {
+	height: 2em;
+
+}

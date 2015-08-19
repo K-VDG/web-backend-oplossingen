@@ -1,0 +1,49 @@
+body {
+	font-family: 'lucida console';
+	background-color: ;
+}
+
+.artikel{
+	display: inline-block;
+	width: 29.5%;
+	height: 23em;
+	vertical-align: top;
+
+	padding: 0.5em;
+	    box-shadow: 4px 7px 10px #888888;
+}
+
+.artikelPic {
+
+	width: 100%;
+	max-height: em;
+	max-width: 9em;
+
+}
+
+.datum, a {
+	color: orange;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1em;
+}
+
+.fullPic{
+	width: 30%;
+	display: inline-block;
+	margin: 15px;
+
+}
+
+.grootartikel {
+
+}
+
+.groteAlinea {
+	width: 50%;
+	display: inline-block;
+	    text-align: justify;
+    text-justify: inter-word;
+}
