@@ -1,0 +1,12 @@
+.even {
+	background-color: black;
+	color: white;
+}
+
+tr:nth-child(odd) {
+	background-color: orange;
+}
+
+thead {
+	border: 3px solid black;
+}

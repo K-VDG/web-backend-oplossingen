@@ -20,7 +20,7 @@
 	 	$outputArray[] = $md5HashKey;
 
 	 	// return($outputArray);
-	 	$antwoord = 'Het karakter ' . $outputArray[2] . ' komt ' . $outputArray[0] . ' keer voor in de string ' . $outputArray[3] . '. Dit is ' . $outputArray[1] . '%';
+	 	$antwoord = 'De string ' . $outputArray[2] . ' komt ' . $outputArray[0] . ' keer voor in de string ' . $outputArray[3] . '. Dit is ' . $outputArray[1] . '%';
 	 	return($antwoord);
 	 }
 
@@ -41,7 +41,7 @@
 	 	$outputArray[] = $md5HashKey;
 
 	 	// return($outputArray);
-	 	$antwoord = 'Het karakter ' . $outputArray[2] . ' komt ' . $outputArray[0] . ' keer voor in de string ' . $outputArray[3] . '. Dit is ' . $outputArray[1] . '%';
+	 	$antwoord = 'De string ' . $outputArray[2] . ' komt ' . $outputArray[0] . ' keer voor in de string ' . $outputArray[3] . '. Dit is ' . $outputArray[1] . '%';
 	 	return($antwoord);
 	 }
 
@@ -62,7 +62,7 @@
 	 	$outputArray[] = $md5HashKey;
 
 	 	// return($outputArray);
-	 	$antwoord = 'Het karakter ' . $outputArray[2] . ' komt ' . $outputArray[0] . ' keer voor in de string ' . $outputArray[3] . '. Dit is ' . $outputArray[1] . '%';
+	 	$antwoord = 'De string ' . $outputArray[2] . ' komt ' . $outputArray[0] . ' keer voor in de string ' . $outputArray[3] . '. Dit is ' . $outputArray[1] . '%';
 	 	return($antwoord);
 	 }
 

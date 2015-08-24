@@ -4,17 +4,17 @@ $maximumThrows = 8;
 
 function calculateHit($pigHealth){
 	global $maximumThrows;
-	global $pigHealth;
+	//global $pigHealth;
 	static $aantalkeer = 0;
 	if($aantalkeer < $maximumThrows) {
 
-		$raakKans = rand(0,10);
-		if($raakKans < 9) {
+		$raakKans = rand(1,10);
+		if($raakKans < 5) {
 			--$pigHealth;
-			if($pigHealth > 0){
+			if($pigHealth > 1){
 			echo('<p>Raak! Er zijn nog maar ' . $pigHealth . ' varkens over.</p>' . 'raakansvariabele =  ' .$raakKans);
 			} else {
-			echo('<p>Raak! Dat was het laatste varken! ' . 'raakansvariabele =  ' .$raakKans);
+			echo('<p>Raak! Nog 1 varken over! ' . 'raakansvariabele =  ' .$raakKans);
 
 			}
 

@@ -1,0 +1,16 @@
+body {
+	font-family: helvetica;
+	font-size: 120%;
+}
+
+div.container {
+	margin: 0 auto;
+	border: 1px dashed grey;
+	background-color: #DDD;
+	width: 70%;
+	min-height: 600px;
+}
+
+a {
+	color: black;
+}
