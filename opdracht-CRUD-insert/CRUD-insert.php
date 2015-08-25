@@ -16,25 +16,24 @@
 		$messageContainer	=	'Er ging iets mis: ' . $e->getMessage();
 	}
 
-// OPHALEN SUBMIT
+// ophalen submit values
 
 if (isset($_POST['submit'])){
 
 	try {
-
-
-		var_dump($_POST['submit']);
+		var_dump($_POST);
 		$brnaam = $_POST['brnaam'];
 		$adres = $_POST['adres'];
 		$postcode = $_POST['postcode'];
 		$gemeente = $_POST['gemeente'];
 		$omzet = $_POST['omzet'];
-echo $db->lastInsertId();
 		$invoerQuery = "INSERT INTO `brouwers`(`brouwernr`, `brnaam`, `adres`, `postcode`, `gemeente`, `omzet`) VALUES ('',' $brnaam','$adres','$postcode','$gemeente','$omzet')";
 
 		$messageContainer	=	'Upload geslaagd!';
 
-echo $db->lastInsertId();
+			$statement = $db->prepare($invoerQuery);
+			$statement->execute();
+			echo('laatst toegevoegd:' . $db->lastInsertId());
 
 
 	}
@@ -47,9 +46,6 @@ echo $db->lastInsertId();
 }
 
 // INVOEREN
-	$statement = $db->prepare($invoerQuery);
-
-	$statement->execute();
 
 // 
 

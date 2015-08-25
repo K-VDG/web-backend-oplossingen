@@ -1,0 +1,64 @@
+.odd {
+	background-color: #003399;
+	color:white;
+}
+
+input[type=submit] {
+	width: 70px;
+	height: 30px;
+	margin: 10px;
+	}
+
+form.deleteknop button {
+	background: url(../images/icon-delete.png);
+	width: 19px;
+	height: 19px;
+	background-repeat: no-repeat;
+	text-align: center;
+
+}
+
+form.editknop button {
+	background:url(../images/edit.png);
+	background-repeat: no-repeat;
+	width: 18px;
+	height: 18px;
+}
+
+thead, th {
+	border: 2px solid grey;
+}
+
+code {
+	font-size: 120%;
+}
+
+#bevestiging {
+	background-color: #FF4719;
+	padding: 3px;
+	font-size: 120%;
+
+}
+
+.hidden {
+	display: none;
+}
+
+.shown {
+	display: block;
+}
+
+tr#rood {
+	background-color: #FF4719;
+	border: 3px dashed #FF4719;
+}
+
+#wijzigbrouwerij {
+	list-style-type: none;
+	border: 1px solid lightgrey;
+	font-size: 60%;
+}
+
+#wijzigbrouwerijknop {
+width: 80px;
+}
