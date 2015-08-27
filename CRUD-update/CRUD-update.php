@@ -59,9 +59,69 @@ function __autoload( $className )
 			$teVerwijderen = '';
 		}
 
-
-	
 	}
+
+// edit
+	$brnaamToDelete = '';
+	$brouwernrToDelete ='';
+	$showEditHeader = FALSE;
+
+	if (isset($_GET['edit'])){
+
+		try {
+			
+			$_SESSION['edit'] = $_GET['edit'];
+			$showEditHeader = TRUE;
+			$brouwernrToDelete = $_SESSION['edit'];
+
+			$zoekEditBrouwerQuery = 'SELECT * FROM brouwers WHERE brouwernr =' . $brouwernrToDelete;
+
+			$statement = $db->prepare($zoekEditBrouwerQuery);
+
+			$statement->execute();
+
+				while ( $row = $statement->fetch(PDO::FETCH_ASSOC) )
+					{
+						$editBrouwer[]	=	$row;
+					}
+
+			$brnaamToDelete = $editBrouwer[0]['brnaam'];
+		}
+		catch(PDOException $e) {
+			$boodschap = 'foute boel';
+		}
+
+	}	
+// edit de geslecteerde brouwer
+	if(isset($_POST['wijzigen'])){
+		var_dump($_POST);
+
+		try{
+		$brnaam = $_POST['brnaam'];
+		$adres = $_POST['adres'];
+		$postcode = $_POST['postcode'];
+		$gemeente = $_POST['gemeente'];
+		$omzet = $_POST['omzet'];
+		$invoerQuery = "INSERT INTO `brouwers`(`brouwernr`, `brnaam`, `adres`, `postcode`, `gemeente`, `omzet`) VALUES ('',' $brnaam','$adres','$postcode','$gemeente','$omzet')";
+
+		
+			$statement = $db->prepare($invoerQuery);
+			$statement->execute();
+
+			$boodschap	=	'Aanpassing succesvol doorgevoerd!';
+
+		}
+
+		catch(PDOException $e) {
+
+		$boodschap	=	'Aanpassing is niet gelukt. Probeer opnieuw of neem contact op met de <a href="mailto:webmaster@dinges.be">systeembeheerder</a> wanneer deze fout zich blijft voordoen' . $e->getMessage();
+
+		}
+
+
+	}
+	
+	
 // data ophalen:
 	$selecteerQuery = "SELECT * FROM brouwers";
 	$statement = $db->prepare($selecteerQuery);
@@ -75,6 +135,8 @@ function __autoload( $className )
 		$alleBrouwers = array_reverse($alleBrouwers);
 
 
+		
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -86,21 +148,23 @@ function __autoload( $className )
 	<link href="css/stijl.css" rel="stylesheet"/>
 </head>
 <body>
-	<h2>Brouwerij <?='' ?> wijzigen<h2>
+	<div  class="<?= ($showEditHeader) ? 'shown' :'hidden' ?>" id="editDIV">
+	<h1>Brouwerij <?= $brnaamToDelete . '(#' . $brouwernrToDelete . ')' ?> wijzigen<h1>
 			<form id="wijzigbrouwerij" method="post" action="<?=$ditBestand ?>">
 				<li><label for="brnaam"></label>Brouwernaam</li>
-				<li><input type="text" name="brnaam" id="brnaam" value="">
+				<li><input type="text" name="brnaam" id="brnaam" value="<?= $editBrouwer[0]['brnaam'] ?>">
 				<label for="adres"></label>adres</li>
-				<li><input type="text" name="adres" id="adres" value="">
+				<li><input type="text" name="adres" id="adres" value="<?= $editBrouwer[0]['adres'] ?>">
 			<label for="postcode"></label>postcode</li>
-				<li><input type="text" name="postcode" id="postcode" value="">
+				<li><input type="text" name="postcode" id="postcode" value="<?= $editBrouwer[0]['postcode'] ?>">
 			<label for="gemeente"></label>gemeente</li>
-				<li><input type="text" name="gemeente" id="gemeente" value="">
+				<li><input type="text" name="gemeente" id="gemeente" value="<?= $editBrouwer[0]['gemeente'] ?>">
 			<label for="omzet"></label>omzet</li>
-				<li><input type="text" name="omzet" id="omzet" value=""></li>
+				<li><input type="text" name="omzet" id="omzet" value="<?= $editBrouwer[0]['omzet'] ?>"></li>
 				<input type="hidden" name="hiddenBrouwer" value="" >
-			<li>	<input type="submit" id="wijzigbrouwerijknop" value="wijzigen"></li>
+			<li>	<input type="submit" name="wijzigen" id="wijzigbrouwerijknop" value="wijzigen"></li>
 		</form>
+	</div>
 
 	<h2><a href="<?= $ditBestand ?>">Overzicht van de brouwers</a></h2>
 			<form id="bevestiging" class= "<?= ($teVerwijderen)? 'shown' : 'hidden '?>">

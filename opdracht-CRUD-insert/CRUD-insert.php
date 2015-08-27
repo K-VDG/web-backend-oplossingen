@@ -29,12 +29,12 @@ if (isset($_POST['submit'])){
 		$omzet = $_POST['omzet'];
 		$invoerQuery = "INSERT INTO `brouwers`(`brouwernr`, `brnaam`, `adres`, `postcode`, `gemeente`, `omzet`) VALUES ('',' $brnaam','$adres','$postcode','$gemeente','$omzet')";
 
-		$messageContainer	=	'Upload geslaagd!';
-
+		
 			$statement = $db->prepare($invoerQuery);
 			$statement->execute();
 			echo('laatst toegevoegd:' . $db->lastInsertId());
 
+			$messageContainer	=	'Upload geslaagd!';
 
 	}
 

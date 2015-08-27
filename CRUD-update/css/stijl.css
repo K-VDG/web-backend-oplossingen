@@ -34,10 +34,11 @@ code {
 }
 
 #bevestiging {
-	background-color: #FF4719;
+	border: 5px dashed #FF4719;
 	padding: 3px;
 	font-size: 120%;
-
+	width: 500px;
+	text-align: center;
 }
 
 .hidden {
